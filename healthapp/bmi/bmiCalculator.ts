@@ -17,7 +17,19 @@ export const calculateBmi = (height: number, weight: number): string => {
 };
 
 try {
-  console.log(calculateBmi(180, 74));
+	const args = process.argv.slice(2);
+
+  if (args.length !== 2) {
+    throw new Error("Please provide height and weight");
+  }
+
+  const height = Number(args[0]);
+  const weight = Number(args[1]);
+
+  if (isNaN(height) || isNaN(weight)) {
+    throw new Error("Provided values were not numbers!");
+  }
+  console.log(calculateBmi(height, weight));
 } catch (error: unknown) {
   let errorMessage = "Something went wrong: ";
   if (error instanceof Error) {
