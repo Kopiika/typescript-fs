@@ -10,7 +10,7 @@
     "tsc": "tsc",
     "calculateBmi": "tsc -p bmi/tsconfig.json && tsx bmi/bmiCalculator.ts",
     "calculateExercises": "tsc -p bmi/tsconfig.json && tsx bmi/exerciseCalculator.ts",
-    "start": "tsc && node index.ts",
+    "start": "tsx index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
